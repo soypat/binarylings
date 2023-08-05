@@ -13,7 +13,7 @@ go test ./exercises/002-overflow
 ```
 should print out failed test reports since there currently is no solution.
 
-Upon solving the problem you should see the following text be printed on running test:
+Upon solving the problem by modifying [`./exercises/002-overflow/overflow.go`](exercises/002-overflow/overflow.go) you should see the following text be printed on running test:
 
 ```
 ok      github.com/soypat/binarylings/exercises/002-overflow
