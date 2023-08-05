@@ -45,7 +45,7 @@ import (
 )
 
 func FormatBinary(num uint8) (s string) {
-	for i := 0; i < 8; i++ {
+	for i := 7; i >= 0; i-- {
 		if bitAt(num, i) {
 			s += "1"
 		} else {
@@ -89,7 +89,10 @@ func PopCount_Stdlib(buf uint8) (count int) {
 }
 
 func FormatBinary_Stdlib(num uint8) string {
-	return fmt.Sprintf("%b", num)
+	// strconv.FormatUint(uint64(num), 2) also works but does not print leading zeros.
+
+	// Format verb with preceding 08 to indicate we want up to 8 leading zeros to be printed.
+	return fmt.Sprintf("%08b", num)
 }
 
 func FormatBinary_efficient(num uint8) string {
