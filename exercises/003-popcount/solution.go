@@ -99,7 +99,7 @@ func FormatBinary_efficient(num uint8) string {
 	// We know our string has exactly 8 bytes so we allocate memory only once.
 	// Setting a value in a slice is MUCH faster than concatenating strings.
 	var buf [8]byte
-	for i := 0; i < 8; i++ {
+	for i := 7; i >= 0; i-- {
 		if bitAt(num, i) {
 			buf[i] = '1'
 		} else {
